@@ -19,8 +19,8 @@ jobs:
       
       - name: Create PR file
         run: |
-          echo "# Bug Report: ${{ github.event.issue.title }}" > ${GITHUB_WORKSPACE}/${{ github.event.issue.title }}.md
-          echo "${{ github.event.issue.body }}" >> ${GITHUB_WORKSPACE}/${{ github.event.issue.title }}.md
+          echo "# Bug Report: ${{ github.event.issue.title }}" > ${{ GITHUB_WORKSPACE }}/${{ github.event.issue.title }}.md
+          echo "${{ github.event.issue.body }}" >> ${{ GITHUB_WORKSPACE }}/${{ github.event.issue.title }}.md
           git add .
           git commit -m "Create PR for issue #${{ github.event.issue.number }}"
           git push origin bugfix/${{ github.event.issue.number }}/${{ github.event.issue.title }}

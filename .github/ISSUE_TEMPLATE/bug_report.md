@@ -19,17 +19,17 @@ assignees: ''
 
 Descreva o problema/enhancement com o máximo de detalhes possível. Inclua:
 
-- Qual é o comportamento atual?
-- O que você esperava que acontecesse?
-- Qual é o contexto do problema/enhancement?
+<input type="text" name="comportamento_atual" placeholder="Qual é o comportamento atual?" readonly />
+
+<input type="text" name="expectativa" placeholder="O que você esperava que acontecesse?" readonly />
+
+<input type="text" name="contexto" placeholder="Qual é o contexto do problema/enhancement?" readonly />
 
 ## Como reproduzir
 
 Descreva os passos para reproduzir o problema. Inclua:
 
-1. Passo 1
-2. Passo 2
-3. Passo 3
+<textarea name="passos" placeholder="1. Passo 1&#10;2. Passo 2&#10;3. Passo 3" readonly></textarea>
 
 Se possível, inclua screenshots.
 
@@ -37,16 +37,6 @@ Se possível, inclua screenshots.
 
 Descreva o ambiente em que o problema ocorreu. Inclua:
 
-- Sistema operacional e versão
-- Navegador e versão
-- Versão do aplicativo (se aplicável)
+<input type="text" name="sistema_operacional" placeholder="Sistema operacional e versão" readonly />
 
-## Solução Proposta
-
-Descreva a solução proposta, se houver.
-
-## Checklist
-
-- [ ] Verifique se o problema/enhancement já foi reportado
-- [ ] Verifique se o problema/enhancement já foi corrigido em uma versão mais recente
-- [ ] Verifique se o problema/enhancement não é uma duplicata
+<input type="text" name="navegador" placeholder="Navegador e versão" readonly />

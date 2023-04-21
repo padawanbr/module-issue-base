@@ -15,7 +15,7 @@ jobs:
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Action"
-          git checkout -b bugfix/${{ github.event.issue.number }}/bugfix-${{ github.event.issue.title }}
+          git checkout -b "bugfix/${{ github.event.issue.number }}"
 
       
       - name: Create PR file
@@ -32,7 +32,7 @@ jobs:
           --header 'content-type: application/json' \
           --data '{
             "title": "[WIP] - Bug Fix for Issue #'${{ github.event.issue.number }}' - '${{ github.event.issue.title }}'",
-            "head": "bugfix/${{ github.event.issue.number }}/${{ github.event.issue.title }}",
+            "head": "bugfix/${{ github.event.issue.number }}",
             "base": "main",
             "body": "This pull request is automatically created to address issue #"${{ github.event.issue.number }}".\n\nPlease review and merge this pull request when you're ready.\n\n@${{ github.event.issue.user.login }} Please check to make sure that this issue has been fixed as expected."
           }'

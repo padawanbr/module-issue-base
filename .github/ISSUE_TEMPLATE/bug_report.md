@@ -7,32 +7,46 @@ assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+---
+name: Nome da Issue
+about: Descrição curta da issue
+title: '[Nome da Issue] '
+labels: ''
+assignees: ''
+---
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+## Descrição
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+Descreva o problema/enhancement com o máximo de detalhes possível. Inclua:
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+- Qual é o comportamento atual?
+- O que você esperava que acontecesse?
+- Qual é o contexto do problema/enhancement?
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+## Como reproduzir
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+Descreva os passos para reproduzir o problema. Inclua:
 
-**Additional context**
-Add any other context about the problem here.
+1. Passo 1
+2. Passo 2
+3. Passo 3
+
+Se possível, inclua screenshots.
+
+## Ambiente
+
+Descreva o ambiente em que o problema ocorreu. Inclua:
+
+- Sistema operacional e versão
+- Navegador e versão
+- Versão do aplicativo (se aplicável)
+
+## Solução Proposta
+
+Descreva a solução proposta, se houver.
+
+## Checklist
+
+- [ ] Verifique se o problema/enhancement já foi reportado
+- [ ] Verifique se o problema/enhancement já foi corrigido em uma versão mais recente
+- [ ] Verifique se o problema/enhancement não é uma duplicata

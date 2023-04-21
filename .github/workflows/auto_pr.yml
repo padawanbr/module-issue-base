@@ -18,21 +18,23 @@ jobs:
           git checkout -b "bugfix/${{ github.event.issue.number }}"
 
       
-      - name: Create PR
+      - name: Create PR file
         run: |
           echo "# Bug Report: ${{ github.event.issue.title }}" > ${{ github.workspace }}/${{ github.event.issue.title }}.md
           echo "${{ github.event.issue.body }}" >> ${{ github.workspace }}/${{ github.event.issue.title }}.md
           git add .
           git commit -m "Create PR for issue #${{ github.event.issue.number }}"
-          git push origin "bugfix/${{ github.event.issue.number }}"
+          git push origin bugfix/${{ github.event.issue.number }}
           
           curl --request POST \
           --url https://api.github.com/repos/${{ github.repository }}/pulls \
           --header "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
           --header 'content-type: application/json' \
-          --data '{
-            "title": "[WIP] - Bug Fix for Issue ${{ github.event.issue.number }} - ${{ github.event.issue.title }}",
-            "head": "bugfix/${{ github.event.issue.number }}",
-            "base": "main",
-            "body": "This pull request is automatically created to address issue #${{ github.event.issue.number }}.\\n\\nPlease review and merge this pull request when you\'re ready.\\n\\n@${{ github.event.issue.user.login }} Please check to make sure that this issue has been fixed as expected."
-          }'
+          --data '
+            {
+              "title": "[WIP] - Bug Fix for Issue ${{ github.event.issue.number }} - ${{ github.event.issue.title }}",
+              "head": "bugfix/${{ github.event.issue.number }}",
+              "base": "main",
+              "body": "This pull request is automatically created to address issue #${{ github.event.issue.number }}.\\n\\nPlease review and merge this pull request when you\'re ready.\\n\\n@${{ github.event.issue.user.login }} Please check to make sure that this issue has been fixed as expected."
+            }
+          '

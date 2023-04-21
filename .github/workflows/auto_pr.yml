@@ -1,3 +1,4 @@
+
 name: Criar pull request ao abrir uma issue
 
 on:
@@ -15,8 +16,7 @@ jobs:
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Action"
-          git checkout -b "bugfix/${{ github.event.issue.number }}/${{ github.event.issue.title }}"
-      
+          git checkout -b "bugfix/#${{ github.event.issue.number }}//#${{ github.event.issue.title }}"
       - name: Create PR file
         run: |
           echo "# Bug Report: ${{ github.event.issue.title }}" > ${{ GITHUB_WORKSPACE }}/${{ github.event.issue.title }}.md

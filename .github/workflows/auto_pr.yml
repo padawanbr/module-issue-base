@@ -1,20 +1,17 @@
-name: Auto PR
+name: Criar pull request ao abrir uma issue
 
 on:
   issues:
     types: [opened]
 
 jobs:
-  auto_pr:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - name: Create PR
-      uses: peter-evans/create-pull-request@v5
-      with:
-        base: main
-        head: fix/#${{ github.event.issue.number }}"
-        commit-message: "Auto PR: Fixes #${{ github.event.issue.number }}"
-        title: "Auto PR: Fixes #${{ github.event.issue.number }}"
-        body: "This PR was automatically generated to resolve issue #${{ github.event.issue.number }}."
+  create-pr:
+  runs-on: ubuntu-latest
+  steps:
+  - name: Criar Pull Request
+    uses: peter-evans/create-pull-request@v3.11.0
+    with:
+      base: nome_da_branch_de_destino
+      head: ${{ github.event.issue.user.login }}:nome_da_branch_de_origem
+      title: ${{ github.event.issue.title }}
+      body: ${{ github.event.issue.body }}

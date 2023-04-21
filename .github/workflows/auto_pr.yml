@@ -1,0 +1,18 @@
+name: Auto PR
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  auto_pr:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Create PR
+      uses: peter-evans/create-pull-request@v3.9.1
+      with:
+        commit-message: "Auto PR: Fixes #${{ github.event.issue.number }}"
+        title: "Auto PR: Fixes #${{ github.event.issue.number }}"
+        body: "This PR was automatically generated to resolve issue #${{ github.event.issue.number }}."

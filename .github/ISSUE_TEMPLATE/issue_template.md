@@ -1,20 +1,21 @@
-name: Auto PR
+<!--- Preencha as informações abaixo para criar uma nova issue --->
 
-on:
-  issues:
-    types: [opened]
+## Título da issue
 
-jobs:
-  auto_pr:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - name: Create PR
-      uses: peter-evans/create-pull-request@v5
-      with:
+<!--- Descrição detalhada da issue --->
+
+## Solução proposta
+
+<!--- Descreva como você planeja resolver a issue --->
+
+<!--- Trecho de código para acionar a action e criar o pull request --->
+
+<!---
+- name: Criar Pull Request
+  uses: peter-evans/create-pull-request@v3.11.0
+  with:
     base: nome_da_branch_de_destino
-    head: nome_da_branch_de_origem
-        commit-message: "Auto PR: Fixes #${{ github.event.issue.number }}"
-        title: "Auto PR: Fixes #${{ github.event.issue.number }}"
-        body: "This PR was automatically generated to resolve issue #${{ github.event.issue.number }}."
+    head: ${{ github.event.issue.user.login }}:nome_da_branch_de_origem
+    title: ${{ github.event.issue.title }}
+    body: ${{ github.event.issue.body }}
+--->

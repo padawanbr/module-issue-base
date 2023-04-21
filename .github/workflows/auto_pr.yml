@@ -18,13 +18,13 @@ jobs:
           git checkout -b "bugfix/${{ github.event.issue.number }}"
 
       
-      - name: Create PR file
+      - name: Create PR
         run: |
           echo "# Bug Report: ${{ github.event.issue.title }}" > ${{ github.workspace }}/${{ github.event.issue.title }}.md
           echo "${{ github.event.issue.body }}" >> ${{ github.workspace }}/${{ github.event.issue.title }}.md
           git add .
           git commit -m "Create PR for issue #${{ github.event.issue.number }}"
-          git push origin bugfix/${{ github.event.issue.number }}
+          git push origin "bugfix/${{ github.event.issue.number }}"
           
           curl --request POST \
           --url https://api.github.com/repos/${{ github.repository }}/pulls \

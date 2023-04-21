@@ -13,6 +13,7 @@ jobs:
     - name: Create PR
       uses: peter-evans/create-pull-request@v5
       with:
+        branch: main
         commit-message: "Auto PR: Fixes #${{ github.event.issue.number }}"
         title: "Auto PR: Fixes #${{ github.event.issue.number }}"
         body: "This PR was automatically generated to resolve issue #${{ github.event.issue.number }}."

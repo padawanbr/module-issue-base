@@ -7,12 +7,24 @@ assignees: ''
 
 ---
 
-## Descrição
+<!--- Preencha as informações abaixo para criar uma nova issue --->
 
-Descreva o problema/enhancement com o máximo de detalhes possível. Inclua:
+## Título da issue
 
-<input type="text" name="comportamento_atual" placeholder="Qual é o comportamento atual?" readonly />
+<!--- Descrição detalhada da issue --->
 
-<input type="text" name="expectativa" placeholder="O que você esperava que acontecesse?" readonly />
+## Solução proposta
 
-<input type="text" name="contexto" placeholder="Qual é o contexto do problema/enhancement?" readonly />
+<!--- Descreva como você planeja resolver a issue --->
+
+<!--- Trecho de código para acionar a action e criar o pull request --->
+
+<!---
+- name: Criar Pull Request
+  uses: peter-evans/create-pull-request@v3.11.0
+  with:
+    base: nome_da_branch_de_destino
+    head: ${{ github.event.issue.user.login }}:nome_da_branch_de_origem
+    title: ${{ github.event.issue.title }}
+    body: ${{ github.event.issue.body }}
+--->

@@ -31,7 +31,7 @@ jobs:
           --header "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
           --header 'content-type: application/json' \
           --data '{
-            "title": "[WIP] - Bug Fix for Issue #'"${{ github.event.issue.number }}"' - '"${{ github.event.issue.title }}"'",
+            "title": "[WIP] - Bug Fix for Issue ${{ github.event.issue.number }} - ${{ github.event.issue.title }}",
             "head": "bugfix/${{ github.event.issue.number }}",
             "base": "main",
             "body": "This pull request is automatically created to address issue #${{ github.event.issue.number }}.\\n\\nPlease review and merge this pull request when you\'re ready.\\n\\n@${{ github.event.issue.user.login }} Please check to make sure that this issue has been fixed as expected."

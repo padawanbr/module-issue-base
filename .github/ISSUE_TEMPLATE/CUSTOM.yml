@@ -1,0 +1,25 @@
+name: Nome do modelo de issue
+about: Descrição do modelo de issue
+
+title: "[TÍTULO DA ISSUE]"
+description: |
+  # Descrição da issue
+  
+  [DESCRIÇÃO DETALHADA DA ISSUE AQUI]
+
+  ## Tarefas
+  - [ ] Tarefa 1
+  - [ ] Tarefa 2
+  - [ ] Tarefa 3
+
+labels:
+  - label1
+  - label2
+  - label3
+
+assignees:
+  - @usuario1
+  - @usuario2
+  - @usuario3
+
+milestone: Nome da milestone
